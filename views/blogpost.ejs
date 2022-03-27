@@ -1,0 +1,15 @@
+<%- include('header.ejs') %>
+<% if(article.image) { %>
+<img src="<%- article.image %>" alt="Articel Image" />
+<% } %>
+<h1><%- article.title %></h1>
+<div class="contents"></div>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  window.addEventListener("load", () => {
+    document.getElementsByClassName("contents")[0].innerHTML = marked.parse(
+      "<%- article.contents.replaceAll("\r\n", "\\n").replaceAll("\"", "\\\""); %>"
+    );
+  });
+</script>
+<%- include('footer.ejs') %>

@@ -1,0 +1,56 @@
+<%- include('header.ejs') %> <% objects.forEach(el=>{ %>
+<br />
+<div class="results">
+  <div
+    onclick="window.location=window.location.origin+'/blog/<%- el.slug %>'"
+    style="cursor: pointer"
+    class="result"
+  >
+    <% if(el.image) { %>
+    <img src="<%- el.image %>" alt="Blogpost-image" />
+    <% } %>
+    <h1><%- el.title %></h1>
+    <h4><%- el.headline %></h4>
+    <a href="/blog/<%- el.slug %>" class="primary">See more!</a>
+  </div>
+  <% }) %>
+</div>
+<style>
+  .results {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .result {
+    margin-left: 20px;
+    width: 200px;
+    border-radius: 0.56em;
+    padding: 20px;
+    padding-top: 0px;
+    border: 3px cyan solid;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .result > img {
+    width: 123%;
+    transform: translateX(-9%);
+    height: 10vh;
+  }
+
+  .result > .primary {
+    bottom: 10px;
+  }
+
+  .result > * {
+    margin: 0;
+  }
+
+  .result > h4 {
+    margin-bottom: 20px;
+  }
+
+  .result:hover {
+    background: rgba(255, 255, 255, 0.185);
+  }
+</style>
+<%- include('footer.ejs') %>

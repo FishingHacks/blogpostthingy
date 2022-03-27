@@ -1,0 +1,23 @@
+<script src="/index.js"></script>
+<script src="/fontawesome.min.js"></script>
+<link rel="stylesheet" href="/style.css">
+<nav class="navbar">
+    <h1>Blog</h1>
+    <ul>
+      <li class="navitem"><a href="javascript:cookieStore.delete('creds')" class="navlink">log out</a></li>
+        <li class="navitem"><a href="/login" class="navlink">Login</a></li>
+        <li class="navitem"><a href="/" class="navlink">Home</a></li>
+        <li class="navitem" id="searchwrapper">
+        <div class="search">
+          <input
+            type="text"
+            class="searchTerm"
+            placeholder="What post are you looking for?"
+          />
+          <button type="submit" class="searchButton">
+            <i class="fa fa-search"></i>
+          </button>
+        </div></li>
+    </ul>
+</nav>
+<div class="marginleft-20px">
